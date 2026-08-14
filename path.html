@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGuard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: #06111d;
+      color: white;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #091c2d;
+      border-bottom: 1px solid #23445d;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      color: #38d9ff;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    main {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px 55px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 18px;
+      background: #102b42;
+      border: 1px solid #35617f;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background: #0f7498;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .icon {
+      font-size: 60px;
+    }
+
+    h1 {
+      color: #38d9ff;
+      font-size: 38px;
+      margin: 10px 0;
+    }
+
+    .intro p {
+      color: #bdcbd5;
+      font-size: 17px;
+    }
+
+    .step {
+      background: #0b1d30;
+      border: 1px solid #1e405b;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .step h2 {
+      color: #7ce7ff;
+      font-size: 21px;
+      margin: 0 0 5px;
+    }
+
+    .step p {
+      color: #c5d1da;
+      margin: 0;
+    }
+
+    .end {
+      text-align: center;
+      margin-top: 35px;
+      color: #38d9ff;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    footer {
+      background: #040c15;
+      border-top: 1px solid #18364e;
+      padding: 25px;
+      text-align: center;
+      color: #879bab;
+    }
+
+    footer strong {
+      color: #38d9ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Cyber<span>Guard</span></div>
+</header>
+
+<main>
+
+  <a href="lessons.html" class="back-button" data-i18n="back">
+    العودة إلى الدروس
+  </a>
+
+  <section class="intro">
+
+    <div class="icon">🛡️</div>
+
+    <h1 data-i18n="title">
+      الطريق نحو الأمن السيبراني
+    </h1>
+
+    <p data-i18n="intro">
+      إذا كنت باغي تدخل هاد المجال، هادي بعض الخطوات اللي تقدر تبدا بها.
+    </p>
+
+  </section>
+
+
+  <div class="step">
+
+    <h2 data-i18n="s1title">🧠 الأساسيات</h2>
+
+    <p data-i18n="s1text">
+      تعلم أساسيات الحاسوب، أنظمة التشغيل والشبكات.
+    </p>
+
+  </div>
+
+
+  <div class="step">
+
+    <h2 data-i18n="s2title">🔐 الأمن</h2>
+
+    <p data-i18n="s2text">
+      افهم التهديدات، الثغرات وطرق الحماية.
+    </p>
+
+  </div>
+
+
+  <div class="step">
+
+    <h2 data-i18n="s3title">🧪 الممارسة</h2>
+
+    <p data-i18n="s3text">
+      مارس معرفتك في مختبرات تعليمية وبيئات آمنة.
+    </p>
+
+  </div>
+
+
+  <div class="step">
+
+    <h2 data-i18n="s4title">🚀 التخصص</h2>
+
+    <p data-i18n="s4text">
+      اختار المجال اللي كيعجبك وكمل فيه خطوة بخطوة.
+    </p>
+
+  </div>
+
+
+  <div class="end" data-i18n="end">
+    تعلم • مارس • تطور 🔒
+  </div>
+
+</main>
+
+
+<footer>
+
+  <strong>CyberGuard</strong>
+
+  <br>
+
+  <span data-i18n="footer">
+    إعداد من طرف يونس المسلك
+  </span>
+
+</footer>
+
+
+<script>
+
+const translations = {
+
+  ar: {
+
+    back: "العودة إلى الدروس",
+
+    title: "الطريق نحو الأمن السيبراني",
+
+    intro:
+      "إذا كنت باغي تدخل هاد المجال، هادي بعض الخطوات اللي تقدر تبدا بها.",
+
+    s1title: "🧠 الأساسيات",
+    s1text:
+      "تعلم أساسيات الحاسوب، أنظمة التشغيل والشبكات.",
+
+    s2title: "🔐 الأمن",
+    s2text:
+      "افهم التهديدات، الثغرات وطرق الحماية.",
+
+    s3title: "🧪 الممارسة",
+    s3text:
+      "مارس معرفتك في مختبرات تعليمية وبيئات آمنة.",
+
+    s4title: "🚀 التخصص",
+    s4text:
+      "اختار المجال اللي كيعجبك وكمل فيه خطوة بخطوة.",
+
+    end: "تعلم • مارس • تطور 🔒",
+
+    footer: "إعداد من طرف يونس المسلك"
+  },
+
+
+  fr: {
+
+    back: "Retour aux cours",
+
+    title: "Le chemin vers la cybersécurité",
+
+    intro:
+      "Si vous souhaitez entrer dans ce domaine, voici quelques étapes pour commencer.",
+
+    s1title: "🧠 Les bases",
+    s1text:
+      "Apprenez les bases de l'informatique, des systèmes et des réseaux.",
+
+    s2title: "🔐 Sécurité",
+    s2text:
+      "Comprenez les menaces, les vulnérabilités et les moyens de protection.",
+
+    s3title: "🧪 Pratique",
+    s3text:
+      "Mettez vos connaissances en pratique dans des laboratoires éducatifs et sûrs.",
+
+    s4title: "🚀 Spécialisation",
+    s4text:
+      "Choisissez le domaine qui vous intéresse et progressez étape par étape.",
+
+    end: "Apprendre • Pratiquer • Progresser 🔒",
+
+    footer: "Préparé par Younes El Meslek"
+  },
+
+
+  en: {
+
+    back: "Back to lessons",
+
+    title: "The Path to Cybersecurity",
+
+    intro:
+      "If you want to enter this field, here are a few steps to get started.",
+
+    s1title: "🧠 The Basics",
+    s1text:
+      "Learn the basics of computers, operating systems and networks.",
+
+    s2title: "🔐 Security",
+    s2text:
+      "Understand threats, vulnerabilities and protection methods.",
+
+    s3title: "🧪 Practice",
+    s3text:
+      "Practice your knowledge in safe educational labs.",
+
+    s4title: "🚀 Specialization",
+    s4text:
+      "Choose the field that interests you and progress step by step.",
+
+    end: "Learn • Practice • Progress 🔒",
+
+    footer: "Prepared by Younes El Meslek"
+  }
+
+};
+
+
+function applyLanguage(lang) {
+
+  if (!translations[lang]) {
+    lang = "ar";
+  }
+
+  document.documentElement.lang = lang;
+
+  document.documentElement.dir =
+    lang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]")
+    .forEach(function(element) {
+
+      const key =
+        element.getAttribute("data-i18n");
+
+      if (translations[lang][key] !== undefined) {
+
+        element.textContent =
+          translations[lang][key];
+
+      }
+
+    });
+}
+
+
+const savedLanguage =
+  localStorage.getItem("cyberguard-language") || "ar";
+
+
+applyLanguage(savedLanguage);
+
+</script>
+
+</body>
+</html>

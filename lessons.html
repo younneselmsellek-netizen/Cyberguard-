@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CyberGuard - Lessons</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: #06111d;
+      color: white;
+      line-height: 1.9;
+    }
+
+    header {
+      background: #091c2d;
+      border-bottom: 1px solid #23445d;
+      padding: 16px 20px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38d9ff;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      background: #102b42;
+      border: 1px solid #35617f;
+      border-radius: 8px;
+      padding: 8px 15px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .shield {
+      font-size: 65px;
+    }
+
+    .intro h1 {
+      color: #38d9ff;
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .intro p {
+      color: #b9c8d4;
+      font-size: 18px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .lesson {
+      background: #0b1d30;
+      border: 1px solid #1e405b;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .lesson-header {
+      background: #0d253a;
+      padding: 22px 25px;
+      border-bottom: 1px solid #1e405b;
+    }
+
+    .lesson-number {
+      color: #38d9ff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .lesson-header h2 {
+      margin: 6px 0 0;
+      font-size: 27px;
+    }
+
+    .lesson-content {
+      padding: 25px;
+    }
+
+    .lesson-content h3 {
+      color: #7ce7ff;
+      font-size: 21px;
+      margin-top: 0;
+    }
+
+    .lesson-content p {
+      color: #c5d1da;
+      font-size: 16px;
+    }
+
+    .lesson-content ul {
+      color: #c5d1da;
+      padding-right: 25px;
+    }
+
+    html[dir="ltr"] .lesson-content ul {
+      padding-right: 0;
+      padding-left: 25px;
+    }
+
+    .lesson-content li {
+      margin-bottom: 8px;
+    }
+
+    .tip {
+      margin-top: 20px;
+      padding: 15px;
+      background: #092532;
+      border: 1px solid #20586a;
+      border-radius: 10px;
+      color: #c8edf5;
+    }
+
+    .example {
+      margin-top: 20px;
+      padding: 15px;
+      background: #0a1725;
+      border-right: 4px solid #38d9ff;
+      border-radius: 8px;
+      color: #b9c8d4;
+    }
+
+    html[dir="ltr"] .example {
+      border-right: none;
+      border-left: 4px solid #38d9ff;
+    }
+
+    footer {
+      background: #040c15;
+      border-top: 1px solid #18364e;
+      padding: 28px 20px;
+      text-align: center;
+      color: #879bab;
+    }
+
+    footer strong {
+      color: #38d9ff;
+    }
+
+    @media (max-width: 700px) {
+
+      .nav {
+        flex-direction: column;
+      }
+
+      .intro h1 {
+        font-size: 33px;
+      }
+
+      .lesson-header h2 {
+        font-size: 23px;
+      }
+    }
+  .next-button {
+  display: block;
+  width: fit-content;
+  margin: 40px auto 10px;
+  padding: 13px 24px;
+  background: #0f7498;
+  border: 1px solid #38d9ff;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.next-button:hover {
+  background: #1494bd;
+    }</style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      Cyber<span>Guard</span>
+    </div>
+
+    <a href="index-new.html"
+       class="home"
+       data-i18n="home">
+      الرئيسية
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="intro">
+
+    <div class="shield">🛡️</div>
+
+    <h1 data-i18n="title">
+      دروس الأمن السيبراني
+    </h1>
+
+    <p data-i18n="intro">
+      تعلم أساسيات الأمن السيبراني بطريقة واضحة وآمنة ومسؤولة.
+    </p>
+
+  </section>
+
+
+  <!-- LESSON 01 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson1">
+        الدرس 01
+      </div>
+
+      <h2 data-i18n="title1">
+        كلمات المرور والمصادقة
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h1">
+        حماية الحسابات الرقمية
+      </h3>
+
+      <p data-i18n="p1">
+        كلمات المرور هي إحدى أهم وسائل حماية الحسابات الرقمية.
+        يجب أن تكون طويلة وفريدة وألا يتم استعمال كلمة المرور نفسها
+        في جميع الحسابات.
+      </p>
+
+      <ul>
+        <li data-i18n="a1">
+          استعمل كلمة مرور قوية وفريدة.
+        </li>
+
+        <li data-i18n="a2">
+          تجنب استعمال المعلومات الشخصية في كلمات المرور.
+        </li>
+
+        <li data-i18n="a3">
+          استعمل المصادقة متعددة العوامل عندما تكون متاحة.
+        </li>
+
+        <li data-i18n="a4">
+          لا تشارك كلمات المرور مع الآخرين.
+        </li>
+      </ul>
+
+      <div class="tip" data-i18n="tip1">
+        💡 إضافة المصادقة متعددة العوامل تمنح الحساب طبقة حماية إضافية.
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- LESSON 02 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson2">
+        الدرس 02
+      </div>
+
+      <h2 data-i18n="title2">
+        التصيد الإلكتروني
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h2">
+        التعرف على محاولات التصيد
+      </h3>
+
+      <p data-i18n="p2">
+        التصيد الإلكتروني هو محاولة لخداع المستخدم بهدف الحصول
+        على معلومات حساسة مثل كلمات المرور أو المعلومات الشخصية.
+      </p>
+
+      <ul>
+        <li data-i18n="b1">
+          تحقق من عنوان البريد الإلكتروني للمرسل.
+        </li>
+
+        <li data-i18n="b2">
+          لا تضغط على الروابط المشبوهة.
+        </li>
+
+        <li data-i18n="b3">
+          لا تدخل معلوماتك في مواقع غير موثوقة.
+        </li>
+
+        <li data-i18n="b4">
+          تحقق من الرسالة من خلال مصدر رسمي.
+        </li>
+      </ul>
+
+      <div class="example" data-i18n="example2">
+        مثال: إذا وصلتك رسالة تطلب منك تسجيل الدخول بسرعة بسبب
+        "مشكلة في الحساب"، لا تضغط على الرابط مباشرة.
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- LESSON 03 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson3">
+        الدرس 03
+      </div>
+
+      <h2 data-i18n="title3">
+        البرمجيات الخبيثة
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h3">
+        فهم البرمجيات الخبيثة
+      </h3>
+
+      <p data-i18n="p3">
+        البرمجيات الخبيثة هي برامج مصممة لإحداث ضرر أو تنفيذ
+        عمليات غير مرغوب فيها على جهاز أو نظام.
+      </p>
+
+      <ul>
+        <li data-i18n="c1">
+          الفيروسات.
+        </li>
+
+        <li data-i18n="c2">
+          أحصنة طروادة.
+        </li>
+
+        <li data-i18n="c3">
+          برامج التجسس.
+        </li>
+
+        <li data-i18n="c4">
+          برمجيات الفدية.
+        </li>
+      </ul>
+
+      <div class="tip" data-i18n="tip3">
+        💡 حمّل البرامج من مصادر موثوقة وحافظ على تحديث نظام التشغيل.
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- LESSON 04 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson4">
+        الدرس 04
+      </div>
+
+      <h2 data-i18n="title4">
+        أمن الشبكات
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h4">
+        حماية الاتصال بالشبكة
+      </h3>
+
+      <p data-i18n="p4">
+        أمن الشبكات يهدف إلى حماية الأجهزة والبيانات من الوصول
+        غير المصرح به والتهديدات المختلفة.
+      </p>
+
+      <ul>
+        <li data-i18n="d1">
+          استعمل شبكات موثوقة.
+        </li>
+
+        <li data-i18n="d2">
+          كن حذراً عند استعمال شبكات Wi-Fi العامة.
+        </li>
+
+        <li data-i18n="d3">
+          حافظ على تحديث جهاز الراوتر.
+        </li>
+
+        <li data-i18n="d4">
+          استعمل إعدادات أمان مناسبة للشبكة.
+        </li>
+      </ul>
+
+    </div>
+
+  </article>
+
+
+  <!-- LESSON 05 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson5">
+        الدرس 05
+      </div>
+
+      <h2 data-i18n="title5">
+        الخصوصية الرقمية
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h5">
+        حماية المعلومات الشخصية
+      </h3>
+
+      <p data-i18n="p5">
+        الخصوصية الرقمية تعني التحكم قدر الإمكان في المعلومات
+        الشخصية التي تتم مشاركتها مع التطبيقات والمواقع والخدمات.
+      </p>
+
+      <ul>
+        <li data-i18n="e1">
+          راجع صلاحيات التطبيقات.
+        </li>
+
+        <li data-i18n="e2">
+          لا تشارك معلومات غير ضرورية.
+        </li>
+
+        <li data-i18n="e3">
+          راجع إعدادات الخصوصية بانتظام.
+        </li>
+
+        <li data-i18n="e4">
+          فكر قبل نشر المعلومات الشخصية.
+        </li>
+      </ul>
+
+    </div>
+
+  </article>
+
+
+  <!-- LESSON 06 -->
+
+  <article class="lesson">
+
+    <div class="lesson-header">
+
+      <div class="lesson-number"
+           data-i18n="lesson6">
+        الدرس 06
+      </div>
+
+      <h2 data-i18n="title6">
+        النسخ الاحتياطي
+      </h2>
+
+    </div>
+
+    <div class="lesson-content">
+
+      <h3 data-i18n="h6">
+        أهمية النسخ الاحتياطي
+      </h3>
+
+      <p data-i18n="p6">
+        النسخ الاحتياطي يساعد على استرجاع الملفات المهمة في حالة
+        فقدان البيانات أو حدوث عطل أو حادث أمني.
+      </p>
+
+      <ul>
+        <li data-i18n="f1">
+          احتفظ بنسخ من الملفات المهمة.
+        </li>
+
+        <li data-i18n="f2">
+          لا تعتمد على نسخة واحدة فقط.
+        </li>
+
+        <li data-i18n="f3">
+          تحقق من إمكانية استرجاع النسخ الاحتياطية.
+        </li>
+      </ul>
+
+      <div class="tip" data-i18n="tip6">
+        💡 النسخ الاحتياطي الجيد يمكن أن يقلل من تأثير فقدان البيانات.
+      </div>
+
+    </div>
+
+  </article>
+
+<a href="path.html" class="next-button">
+  تابع طريقك نحو الأمن السيبراني
+</a></main>
+
+
+<footer>
+
+  <strong>CyberGuard</strong>
+
+  <br>
+
+  <span data-i18n="footer">
+    إعداد من طرف يونس المسلك
+  </span>
+
+</footer>
+
+
+<script>
+
+const translations = {
+
+  ar: {
+
+    home: "الرئيسية",
+
+    title: "دروس الأمن السيبراني",
+
+    intro:
+      "تعلم أساسيات الأمن السيبراني بطريقة واضحة وآمنة ومسؤولة.",
+
+    lesson1: "الدرس 01",
+    title1: "كلمات المرور والمصادقة",
+    h1: "حماية الحسابات الرقمية",
+
+    p1:
+      "كلمات المرور هي إحدى أهم وسائل حماية الحسابات الرقمية. يجب أن تكون طويلة وفريدة وألا يتم استعمال كلمة المرور نفسها في جميع الحسابات.",
+
+    a1: "استعمل كلمة مرور قوية وفريدة.",
+    a2: "تجنب استعمال المعلومات الشخصية في كلمات المرور.",
+    a3: "استعمل المصادقة متعددة العوامل عندما تكون متاحة.",
+    a4: "لا تشارك كلمات المرور مع الآخرين.",
+
+    tip1:
+      "💡 إضافة المصادقة متعددة العوامل تمنح الحساب طبقة حماية إضافية.",
+
+
+    lesson2: "الدرس 02",
+    title2: "التصيد الإلكتروني",
+    h2: "التعرف على محاولات التصيد",
+
+    p2:
+      "التصيد الإلكتروني هو محاولة لخداع المستخدم بهدف الحصول على معلومات حساسة مثل كلمات المرور أو المعلومات الشخصية.",
+
+    b1: "تحقق من عنوان البريد الإلكتروني للمرسل.",
+    b2: "لا تضغط على الروابط المشبوهة.",
+    b3: "لا تدخل معلوماتك في مواقع غير موثوقة.",
+    b4: "تحقق من الرسالة من خلال مصدر رسمي.",
+
+    example2:
+      "مثال: إذا وصلتك رسالة تطلب منك تسجيل الدخول بسرعة بسبب \"مشكلة في الحساب\"، لا تضغط على الرابط مباشرة.",
+
+
+    lesson3: "الدرس 03",
+    title3: "البرمجيات الخبيثة",
+    h3: "فهم البرمجيات الخبيثة",
+
+    p3:
+      "البرمجيات الخبيثة هي برامج مصممة لإحداث ضرر أو تنفيذ عمليات غير مرغوب فيها على جهاز أو نظام.",
+
+    c1: "الفيروسات.",
+    c2: "أحصنة طروادة.",
+    c3: "برامج التجسس.",
+    c4: "برمجيات الفدية.",
+
+    tip3:
+      "💡 حمّل البرامج من مصادر موثوقة وحافظ على تحديث نظام التشغيل.",
+
+
+    lesson4: "الدرس 04",
+    title4: "أمن الشبكات",
+    h4: "حماية الاتصال بالشبكة",
+
+    p4:
+      "أمن الشبكات يهدف إلى حماية الأجهزة والبيانات من الوصول غير المصرح به والتهديدات المختلفة.",
+
+    d1: "استعمل شبكات موثوقة.",
+    d2: "كن حذراً عند استعمال شبكات Wi-Fi العامة.",
+    d3: "حافظ على تحديث جهاز الراوتر.",
+    d4: "استعمل إعدادات أمان مناسبة للشبكة.",
+
+
+    lesson5: "الدرس 05",
+    title5: "الخصوصية الرقمية",
+    h5: "حماية المعلومات الشخصية",
+
+    p5:
+      "الخصوصية الرقمية تعني التحكم قدر الإمكان في المعلومات الشخصية التي تتم مشاركتها مع التطبيقات والمواقع والخدمات.",
+
+    e1: "راجع صلاحيات التطبيقات.",
+    e2: "لا تشارك معلومات غير ضرورية.",
+    e3: "راجع إعدادات الخصوصية بانتظام.",
+    e4: "فكر قبل نشر المعلومات الشخصية.",
+
+
+    lesson6: "الدرس 06",
+    title6: "النسخ الاحتياطي",
+    h6: "أهمية النسخ الاحتياطي",
+
+    p6:
+      "النسخ الاحتياطي يساعد على استرجاع الملفات المهمة في حالة فقدان البيانات أو حدوث عطل أو حادث أمني.",
+
+    f1: "احتفظ بنسخ من الملفات المهمة.",
+    f2: "لا تعتمد على نسخة واحدة فقط.",
+    f3: "تحقق من إمكانية استرجاع النسخ الاحتياطية.",
+
+    tip6:
+      "💡 النسخ الاحتياطي الجيد يمكن أن يقلل من تأثير فقدان البيانات.",
+
+
+    footer:
+      "إعداد من طرف يونس المسلك"
+  },
+
+
+  fr: {
+
+    home: "Accueil",
+
+    title: "Cours de cybersécurité",
+
+    intro:
+      "Apprenez les bases de la cybersécurité de manière claire, sûre et responsable.",
+
+    lesson1: "LEÇON 01",
+    title1: "Mots de passe et authentification",
+    h1: "Protection des comptes",
+
+    p1:
+      "Les mots de passe sont essentiels pour protéger les comptes numériques. Ils doivent être longs, uniques et ne pas être réutilisés.",
+
+    a1: "Utilisez un mot de passe fort et unique.",
+    a2: "Évitez les informations personnelles dans vos mots de passe.",
+    a3: "Activez l'authentification multifacteur lorsqu'elle est disponible.",
+    a4: "Ne partagez jamais vos mots de passe.",
+
+    tip1:
+      "💡 L'authentification multifacteur ajoute une couche de protection supplémentaire.",
+
+
+    lesson2: "LEÇON 02",
+    title2: "Phishing",
+    h2: "Reconnaître le phishing",
+
+    p2:
+      "Le phishing est une tentative de tromper un utilisateur afin d'obtenir des informations sensibles.",
+
+    b1: "Vérifiez l'adresse de l'expéditeur.",
+    b2: "Ne cliquez pas sur les liens suspects.",
+    b3: "N'entrez pas vos informations sur des sites non fiables.",
+    b4: "Vérifiez le message auprès d'une source officielle.",
+
+    example2:
+      "Exemple : si un message vous demande de vous connecter rapidement à cause d'un prétendu problème de compte, ne cliquez pas directement sur le lien.",
+
+
+    lesson3: "LEÇON 03",
+    title3: "Logiciels malveillants",
+    h3: "Comprendre les logiciels malveillants",
+
+    p3:
+      "Les logiciels malveillants sont conçus pour causer des dommages ou effectuer des actions indésirables.",
+
+    c1: "Virus.",
+    c2: "Chevaux de Troie.",
+    c3: "Logiciels espions.",
+    c4: "Rançongiciels.",
+
+    tip3:
+      "💡 Téléchargez les logiciels depuis des sources fiables et gardez votre système à jour.",
+
+
+    lesson4: "LEÇON 04",
+    title4: "Sécurité des réseaux",
+    h4: "Protéger la connexion réseau",
+
+    p4:
+      "La sécurité des réseaux vise à protéger les appareils et les données contre les accès non autorisés.",
+
+    d1: "Utilisez des réseaux fiables.",
+    d2: "Soyez prudent avec les réseaux Wi-Fi publics.",
+    d3: "Gardez votre routeur à jour.",
+    d4: "Utilisez des paramètres de sécurité adaptés.",
+
+
+    lesson5: "LEÇON 05",
+    title5: "Vie privée numérique",
+    h5: "Protéger les informations personnelles",
+
+    p5:
+      "La vie privée numérique consiste à contrôler autant que possible les informations personnelles partagées avec les applications et services.",
+
+    e1: "Vérifiez les autorisations des applications.",
+    e2: "Ne partagez pas d'informations inutiles.",
+    e3: "Vérifiez régulièrement vos paramètres de confidentialité.",
+    e4: "Réfléchissez avant de publier des informations personnelles.",
+
+
+    lesson6: "LEÇON 06",
+    title6: "Sauvegardes",
+    h6: "Importance des sauvegardes",
+
+    p6:
+      "Les sauvegardes permettent de récupérer des fichiers importants en cas de perte de données ou d'incident.",
+
+    f1: "Gardez des copies des fichiers importants.",
+    f2: "Ne dépendez pas d'une seule copie.",
+    f3: "Vérifiez que vos sauvegardes peuvent être restaurées.",
+
+    tip6:
+      "💡 Une bonne sauvegarde peut réduire l'impact d'une perte de données.",
+
+
+    footer:
+      "Préparé par Younes El Meslek"
+  },
+
+
+  en: {
+
+    home: "Home",
+
+    title: "Cybersecurity Lessons",
+
+    intro:
+      "Learn the basics of cybersecurity in a clear, safe and responsible way.",
+
+    lesson1: "LESSON 01",
+    title1: "Passwords and authentication",
+    h1: "Account protection",
+
+    p1:
+      "Passwords are essential for protecting digital accounts. They should be long, unique and never reused across important accounts.",
+
+    a1: "Use a strong and unique password.",
+    a2: "Avoid using personal information in passwords.",
+    a3: "Enable multi-factor authentication when available.",
+    a4: "Never share your passwords.",
+
+    tip1:
+      "💡 Multi-factor authentication adds an extra layer of protection.",
+
+
+    lesson2: "LESSON 02",
+    title2: "Phishing",
+    h2: "Recognizing phishing",
+
+    p2:
+      "Phishing is an attempt to trick a user into providing sensitive information.",
+
+    b1: "Check the sender's address.",
+    b2: "Do not click suspicious links.",
+    b3: "Do not enter your information on untrusted websites.",
+    b4: "Verify the message through an official source.",
+
+    example2:
+      "Example: if a message asks you to log in quickly because of an alleged account problem, do not click the link directly.",
+
+
+    lesson3: "LESSON 03",
+    title3: "Malware",
+    h3: "Understanding malware",
+
+    p3:
+      "Malware is software designed to cause harm or perform unwanted actions.",
+
+    c1: "Viruses.",
+    c2: "Trojans.",
+    c3: "Spyware.",
+    c4: "Ransomware.",
+
+    tip3:
+      "💡 Download software from trusted sources and keep your system updated.",
+
+
+    lesson4: "LESSON 04",
+    title4: "Network security",
+    h4: "Protecting network connections",
+
+    p4:
+      "Network security helps protect devices and data from unauthorized access and different threats.",
+
+    d1: "Use trusted networks.",
+    d2: "Be careful when using public Wi-Fi.",
+    d3: "Keep your router updated.",
+    d4: "Use appropriate security settings.",
+
+
+    lesson5: "LESSON 05",
+    title5: "Digital privacy",
+    h5: "Protecting personal information",
+
+    p5:
+      "Digital privacy means controlling, as much as possible, the personal information shared with applications and services.",
+
+    e1: "Review application permissions.",
+    e2: "Do not share unnecessary information.",
+    e3: "Review your privacy settings regularly.",
+    e4: "Think before publishing personal information.",
+
+
+    lesson6: "LESSON 06",
+    title6: "Backups",
+    h6: "Why backups matter",
+
+    p6:
+      "Backups help recover important files after data loss, device failure or a security incident.",
+
+    f1: "Keep copies of important files.",
+    f2: "Do not rely on a single copy.",
+    f3: "Check that your backups can be restored.",
+
+    tip6:
+      "💡 A good backup can reduce the impact of data loss.",
+
+
+    footer:
+      "Prepared by Younes El Meslek"
+  }
+
+};
+
+
+function applyLanguage(lang) {
+
+  if (!translations[lang]) {
+    lang = "ar";
+  }
+
+  document.documentElement.lang = lang;
+
+  document.documentElement.dir =
+    lang === "ar" ? "rtl" : "ltr";
+
+  document
+    .querySelectorAll("[data-i18n]")
+    .forEach(function(element) {
+
+      const key =
+        element.getAttribute("data-i18n");
+
+      if (translations[lang][key] !== undefined) {
+        element.textContent =
+          translations[lang][key];
+      }
+
+    });
+
+}
+
+
+const savedLanguage =
+  localStorage.getItem("cyberguard-language") || "ar";
+
+
+applyLanguage(savedLanguage);
+
+</script>
+
+</body>
+</html>

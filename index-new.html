@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CyberGuard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: #06111d;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #091c2d;
+      border-bottom: 1px solid #23445d;
+      padding: 16px 20px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38d9ff;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    .language-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-box label {
+      color: #b9c8d4;
+    }
+
+    #language {
+      background: #102b42;
+      color: white;
+      border: 1px solid #35617f;
+      border-radius: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .shield {
+      font-size: 75px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #38d9ff;
+      font-size: 48px;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 20px auto;
+      color: #bdcbd5;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .start-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      background: #0f7498;
+      border: 1px solid #38d9ff;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .start-button:hover {
+      background: #1494bd;
+      transform: translateY(-2px);
+    }
+
+    .cards {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #0b1d30;
+      border: 1px solid #1e405b;
+      border-radius: 14px;
+      padding: 25px 18px;
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #7ce7ff;
+      margin: 8px 0;
+    }
+
+    .card p {
+      color: #aebdca;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 25px 20px;
+      background: #040c15;
+      border-top: 1px solid #18364e;
+      color: #879bab;
+      text-align: center;
+    }
+
+    footer strong {
+      color: #38d9ff;
+    }
+
+    @media (max-width: 750px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      Cyber<span>Guard</span>
+    </div>
+
+    <div class="language-box">
+
+      <label for="language" data-i18n="language">
+        اللغة
+      </label>
+
+      <select id="language">
+        <option value="ar">🇲🇦 العربية</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+
+  <div class="shield">🛡️</div>
+
+  <h1 data-i18n="title">
+    CyberGuard
+  </h1>
+
+  <p class="subtitle" data-i18n="subtitle">
+    منصة تعليمية للتعرف على أساسيات الأمن السيبراني
+    بطريقة واضحة وآمنة ومسؤولة.
+  </p>
+
+  <a
+    href="lessons.html"
+    class="start-button"
+    data-i18n="start"
+  >
+    بدء التعلم
+  </a>
+
+
+  <section class="cards">
+
+    <div class="card">
+
+      <div class="card-icon">🔐</div>
+
+      <h3 data-i18n="card1title">
+        حماية الحسابات
+      </h3>
+
+      <p data-i18n="card1text">
+        تعلم أساسيات كلمات المرور والمصادقة وحماية حساباتك.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🎣</div>
+
+      <h3 data-i18n="card2title">
+        التصيد الإلكتروني
+      </h3>
+
+      <p data-i18n="card2text">
+        تعلم كيف تتعرف على الرسائل والروابط المشبوهة.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🛡️</div>
+
+      <h3 data-i18n="card3title">
+        الأمن الرقمي
+      </h3>
+
+      <p data-i18n="card3text">
+        تعرف على ممارسات تساعدك على استعمال الإنترنت بأمان.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <strong>CyberGuard</strong>
+
+  <br>
+
+  <span data-i18n="footer">
+    إعداد من طرف يونس المسلك
+  </span>
+
+</footer>
+
+
+<script>
+
+  const translations = {
+
+    ar: {
+      language: "اللغة",
+      title: "CyberGuard",
+      subtitle: "منصة تعليمية للتعرف على أساسيات الأمن السيبراني بطريقة واضحة وآمنة ومسؤولة.",
+      start: "بدء التعلم",
+
+      card1title: "حماية الحسابات",
+      card1text: "تعلم أساسيات كلمات المرور والمصادقة وحماية حساباتك.",
+
+      card2title: "التصيد الإلكتروني",
+      card2text: "تعلم كيف تتعرف على الرسائل والروابط المشبوهة.",
+
+      card3title: "الأمن الرقمي",
+      card3text: "تعرف على ممارسات تساعدك على استعمال الإنترنت بأمان.",
+
+      footer: "إعداد من طرف يونس المسلك"
+    },
+
+    fr: {
+      language: "Langue",
+      title: "CyberGuard",
+      subtitle: "Une plateforme éducative pour découvrir les bases de la cybersécurité de manière claire, sûre et responsable.",
+      start: "Commencer l'apprentissage",
+
+      card1title: "Protection des comptes",
+      card1text: "Apprenez les bases des mots de passe, de l'authentification et de la protection des comptes.",
+
+      card2title: "Phishing",
+      card2text: "Apprenez à reconnaître les messages et les liens suspects.",
+
+      card3title: "Sécurité numérique",
+      card3text: "Découvrez les bonnes pratiques pour utiliser Internet en toute sécurité.",
+
+      footer: "Préparé par Younes El Meslek"
+    },
+
+    en: {
+      language: "Language",
+      title: "CyberGuard",
+      subtitle: "An educational platform for learning the basics of cybersecurity in a clear, safe and responsible way.",
+      start: "Start Learning",
+
+      card1title: "Account Protection",
+      card1text: "Learn the basics of passwords, authentication and account protection.",
+
+      card2title: "Phishing",
+      card2text: "Learn how to recognize suspicious messages and links.",
+
+      card3title: "Digital Security",
+      card3text: "Discover practices that help you use the Internet safely.",
+
+      footer: "Prepared by Younes El Meslek"
+    }
+
+  };
+
+
+  function applyLanguage(lang) {
+
+    if (!translations[lang]) {
+      lang = "ar";
+    }
+
+    document.documentElement.lang = lang;
+
+    document.documentElement.dir =
+      lang === "ar" ? "rtl" : "ltr";
+
+    document
+      .querySelectorAll("[data-i18n]")
+      .forEach(function(element) {
+
+        const key =
+          element.getAttribute("data-i18n");
+
+        if (translations[lang][key] !== undefined) {
+          element.textContent =
+            translations[lang][key];
+        }
+
+      });
+
+    document.getElementById("language").value = lang;
+
+    localStorage.setItem(
+      "cyberguard-language",
+      lang
+    );
+  }
+
+
+  const languageSelect =
+    document.getElementById("language");
+
+
+  languageSelect.addEventListener(
+    "change",
+    function() {
+
+      applyLanguage(this.value);
+
+    }
+  );
+
+
+  const savedLanguage =
+    localStorage.getItem("cyberguard-language") || "ar";
+
+
+  applyLanguage(savedLanguage);
+
+</script>
+
+</body>
+</html>
