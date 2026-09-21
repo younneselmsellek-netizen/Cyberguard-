@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CyberGuard — Security Lab</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:#050b14;
+color:#eafcff;
+min-height:100vh;
+}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,220,255,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,220,255,.035) 1px,transparent 1px);
+background-size:35px 35px;
+pointer-events:none;
+}
+header{
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 7%;
+border-bottom:1px solid #123047;
+background:#07111e;
+position:relative;
+z-index:2;
+}
+.logo{
+font-weight:bold;
+font-size:21px;
+letter-spacing:2px;
+color:#39dcff;
+}
+.lang{
+border:1px solid #1c536c;
+background:#091b2b;
+color:#8eeeff;
+padding:9px 14px;
+border-radius:9px;
+cursor:pointer;
+}
+.container{
+width:min(1000px,92%);
+margin:auto;
+position:relative;
+z-index:1;
+}
+.hero{
+padding:55px 0 25px;
+text-align:center;
+}
+.hero h1{
+font-size:38px;
+margin:0 0 12px;
+color:#fff;
+}
+.hero p{
+color:#8ea9bb;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+}
+.progress{
+margin:25px 0;
+height:10px;
+background:#0d1d2c;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #16364a;
+}
+.bar{
+height:100%;
+width:8%;
+background:#32ddff;
+box-shadow:0 0 18px #32ddff;
+transition:.4s;
+}
+.info{
+display:flex;
+justify-content:space-between;
+color:#7393a6;
+font-size:13px;
+margin-bottom:25px;
+}
+.stage{
+display:none;
+background:rgba(7,18,30,.94);
+border:1px solid #17435a;
+border-radius:18px;
+padding:30px;
+margin-bottom:30px;
+box-shadow:0 0 35px rgba(0,210,255,.06);
+}
+.stage.active{display:block}
+.stage h2{
+margin-top:0;
+color:#43ddff;
+}
+.stage p{
+color:#b7c9d4;
+line-height:1.9;
+}
+.btn{
+border:1px solid #28cce9;
+background:#092334;
+color:#cfffff;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+margin:6px;
+transition:.2s;
+}
+.btn:hover{
+background:#0c354d;
+box-shadow:0 0 18px rgba(48,220,255,.25);
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin:20px 0;
+}
+.card{
+border:1px solid #17435a;
+background:#081725;
+border-radius:15px;
+padding:22px;
+cursor:pointer;
+transition:.2s;
+}
+.card:hover{
+transform:translateY(-3px);
+border-color:#35dfff;
+}
+.card h3{color:#54e3ff}
+.card small{color:#7893a3}
+.browser{
+border:1px solid #28536b;
+border-radius:14px;
+overflow:hidden;
+background:#06101b;
+margin:20px 0;
+}
+.browserTop{
+background:#0c1d2b;
+padding:12px;
+display:flex;
+gap:7px;
+}
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+background:#436070;
+}
+.address{
+background:#07121d;
+border-top:1px solid #173548;
+border-bottom:1px solid #173548;
+padding:11px 15px;
+font-size:12px;
+color:#6f9aad;
+}
+.browserBody{
+padding:25px;
+}
+.bank{
+border:1px solid #1c5269;
+padding:20px;
+border-radius:12px;
+background:#081b2a;
+}
+.balance{
+font-size:30px;
+color:#43ddff;
+margin:15px 0;
+}
+.profile{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+gap:12px;
+}
+.data{
+background:#07131f;
+border:1px solid #17384b;
+padding:15px;
+border-radius:10px;
+}
+.data span{
+display:block;
+color:#66889b;
+font-size:12px;
+margin-bottom:7px;
+}
+.data b{color:#dffaff}
+.alert{
+display:none;
+padding:15px;
+border-radius:10px;
+margin:15px 0;
+line-height:1.7;
+}
+.danger{
+background:#301016;
+border:1px solid #ff4964;
+color:#ff9aaa;
+}
+.success{
+background:#092c25;
+border:1px solid #32e3a2;
+color:#83ffd1;
+}
+.quiz{
+border:1px solid #173b50;
+padding:18px;
+border-radius:12px;
+margin:15px 0;
+background:#07131f;
+}
+.quiz label{
+display:block;
+padding:10px;
+margin:6px 0;
+border:1px solid #173548;
+border-radius:8px;
+cursor:pointer;
+color:#bdd1db;
+}
+.quiz label:hover{border-color:#2ad9f5}
+.result{
+text-align:center;
+padding:25px;
+border:1px solid #2c6075;
+border-radius:14px;
+margin-top:20px;
+}
+.score{
+font-size:45px;
+color:#42ddff;
+font-weight:bold;
+}
+footer{
+text-align:center;
+padding:30px;
+color:#557282;
+font-size:13px;
+}
+@media(max-width:600px){
+.hero h1{font-size:29px}
+.stage{padding:20px}
+header{padding:0 4%}
+.btn{width:100%;margin:5px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">CYBERGUARD</div>
+<button class="lang" onclick="arabic()">العربية</button>
+</header>
+
+  <a href="index.html" style="display:inline-block;margin:15px 7%;padding:10px 18px;border:1px solid #39dcff;border-radius:9px;background:#092334;color:#cfffff;text-decoration:none;font-weight:bold;">
+← الرجوع إلى الرئيسية
+  </a>
+
+  <div class="container">
+
+<section class="hero">
+<h1>مختبر الأمن الرقمي</h1>
+<p>
+تجربة تفاعلية آمنة تتعلم فيها كيف تعمل أنظمة الصلاحيات،
+وكيف يمكن أن يحدث Broken Access Control داخل نظام تجريبي.
+</p>
+</section>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<div class="info">
+<span id="step">المرحلة 1 من 12</span>
+<span id="percent">8%</span>
+</div>
+
+<!-- 1 -->
+<section class="stage active" id="s1">
+<h2>01 — مرحباً بك في المختبر</h2>
+<p>
+أنت الآن داخل بيئة تدريبية مصممة لمحاكاة نظام بنكي.
+كل شيء هنا خيالي ومحلي، والهدف هو فهم الأمن وليس مهاجمة مواقع حقيقية.
+</p>
+<p>
+خلال المختبر ستتعلم الفرق بين تسجيل الدخول والصلاحيات،
+ثم ستشاهد مثالاً مبسطاً على مشكلة Broken Access Control.
+</p>
+<button class="btn" onclick="go(2)">بدء المختبر →</button>
+</section>
+
+<!-- 2 -->
+<section class="stage" id="s2">
+<h2>02 — اختر حسابك</h2>
+<p>اختر الحساب الذي ستستخدمه داخل النظام التجريبي.</p>
+
+<div class="cards">
+<div class="card" onclick="go(3)">
+<h3>👤 مستخدم عادي</h3>
+<p>صلاحيات محدودة داخل البنك.</p>
+<small>ROLE: USER</small>
+</div>
+
+<div class="card" onclick="go(3)">
+<h3>🛡️ مسؤول النظام</h3>
+<p>صلاحيات إدارية داخل النظام.</p>
+<small>ROLE: ADMIN</small>
+</div>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="stage" id="s3">
+<h2>03 — حسابك البنكي</h2>
+
+<div class="browser">
+<div class="browserTop">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+<div class="address">
+https://cyberbank.local/account
+</div>
+
+<div class="browserBody">
+<div class="bank">
+<h3>CyberBank</h3>
+<p>مرحباً بك في حسابك التجريبي.</p>
+<div class="balance">12,450.00 DH</div>
+<p>الحالة: <b style="color:#46e3a6">نشط</b></p>
+<button class="btn" onclick="showProfile()">عرض معلومات الحساب</button>
+</div>
+</div>
+</div>
+
+<div class="alert success" id="profileAlert">
+تم الوصول إلى صفحة الحساب بشكل طبيعي.
+</div>
+
+<button class="btn" onclick="go(4)">متابعة →</button>
+</section>
+
+<!-- 4 -->
+<section class="stage" id="s4">
+<h2>04 — معلومات الحساب</h2>
+<p>
+في الأنظمة الحقيقية، المعلومات الشخصية والمالية تحتاج إلى حماية قوية.
+هذه البيانات هنا خيالية ومخصصة للتعلم فقط.
+</p>
+
+<div class="profile">
+
+<div class="data">
+<span>الاسم</span>
+<b>يونس العلوي</b>
+</div>
+
+<div class="data">
+<span>رقم الحساب</span>
+<b>CB-2048-7319</b>
+</div>
+
+<div class="data">
+<span>البريد الإلكتروني</span>
+<b>y.alawi@example.test</b>
+</div>
+
+<div class="data">
+<span>الهاتف</span>
+<b>06 ** ** 42 81</b>
+</div>
+
+<div class="data">
+<span>الرصيد</span>
+<b>12,450.00 DH</b>
+</div>
+
+<div class="data">
+<span>نوع الحساب</span>
+<b>USER</b>
+</div>
+
+</div>
+
+<br>
+
+<button class="btn" onclick="go(5)">فهم الصلاحيات →</button>
+</section>
+
+<!-- 5 -->
+<section class="stage" id="s5">
+<h2>05 — ما هي Broken Access Control؟</h2>
+
+<p>
+تخيل أن شخصاً سجل الدخول بشكل صحيح إلى حسابه.
+هذا يعني أن النظام عرف هويته.
+لكن هذا لا يعني أنه يستطيع الوصول إلى كل شيء.
+</p>
+
+<p>
+<strong>Authentication</strong> تعني:
+«من أنت؟»
+</p>
+
+<p>
+أما <strong>Authorization</strong> فتعني:
+«ماذا يسمح لك أن تفعل؟»
+</p>
+
+<p>
+المشكلة تحدث عندما يسمح النظام للمستخدم بالوصول إلى وظيفة
+أو معلومات ليست من صلاحياته.
+</p>
+
+<button class="btn" onclick="go(6)">أكمل التجربة →</button>
+</section>
+
+<!-- 6 -->
+<section class="stage" id="s6">
+<h2>06 — منطقة المسؤول</h2>
+
+<div class="browser">
+<div class="browserTop">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+<div class="address">
+https://cyberbank.local/admin
+</div>
+
+<div class="browserBody">
+<h3>🛡️ لوحة إدارة CyberBank</h3>
+<p>
+هذه المنطقة مخصصة لمسؤولي النظام فقط.
+</p>
+
+<button class="btn" onclick="discover()">
+فحص الصلاحية
+</button>
+
+<div class="alert danger" id="danger"></div>
+</div>
+</div>
+
+<button class="btn" onclick="go(7)">تحليل المشكلة →</button>
+</section>
+
+<!-- 7 -->
+<section class="stage" id="s7">
+<h2>07 — أين توجد المشكلة؟</h2>
+
+<p>
+لاحظ أن تسجيل الدخول وحده لا يكفي لحماية لوحة الإدارة.
+يجب على الخادم أن يتحقق في كل طلب من صلاحيات المستخدم.
+</p>
+
+<p>
+مثلاً:
+المستخدم العادي يمكن أن يكون مسجلاً للدخول،
+لكن يجب ألا يحصل على صلاحيات ADMIN لمجرد أنه طلب صفحة الإدارة.
+</p>
+
+<div class="alert success" style="display:block">
+💡 القاعدة المهمة:
+الهوية تحدد من أنت، والصلاحيات تحدد ما يمكنك فعله.
+</div>
+
+<button class="btn" onclick="go(8)">متابعة →</button>
+</section>
+
+<!-- 8 -->
+<section class="stage" id="s8">
+<h2>08 — كيف نحمي النظام؟</h2>
+
+<p>هناك عدة أفكار أساسية لحماية الأنظمة:</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>🔐 التحقق من الصلاحيات</h3>
+<p>يجب أن يتحقق الخادم من صلاحية المستخدم قبل تنفيذ العملية.</p>
+</div>
+
+<div class="card">
+<h3>🧩 أقل صلاحيات</h3>
+<p>المستخدم يحصل فقط على الصلاحيات التي يحتاجها.</p>
+</div>
+
+<div class="card">
+<h3>📝 تسجيل الأحداث</h3>
+<p>تسجيل العمليات المهمة يساعد على اكتشاف المشاكل.</p>
+</div>
+
+<div class="card">
+<h3>🛡️ الاختبار</h3>
+<p>يجب اختبار الصلاحيات باستمرار للتأكد من عدم وجود ثغرات.</p>
+</div>
+
+</div>
+
+<button class="btn" onclick="go(9)">تفعيل الحماية →</button>
+</section>
+
+<!-- 9 -->
+<section class="stage" id="s9">
+<h2>09 — اختبار الحماية</h2>
+
+<p>
+تم تفعيل نظام التحقق من الصلاحيات.
+حاول الآن الوصول إلى منطقة الإدارة كمستخدم عادي.
+</p>
+
+<button class="btn" onclick="testProtection()">
+محاولة الوصول
+</button>
+
+<div class="alert success" id="success"></div>
+
+<button class="btn" id="next9" style="display:none" onclick="go(10)">
+المرحلة التالية →
+</button>
+</section>
+
+<!-- 10 -->
+<section class="stage" id="s10">
+<h2>10 — النتيجة</h2>
+
+<p>
+تم رفض الوصول لأن حساب المستخدم لا يملك صلاحيات الإدارة.
+</p>
+
+<div class="alert success" style="display:block">
+ACCESS DENIED — الصلاحيات غير كافية
+</div>
+
+<p>
+وهذا هو السلوك الصحيح:
+ليس المهم أن يكون المستخدم مسجلاً للدخول فقط،
+بل يجب التأكد من صلاحياته في كل عملية حساسة.
+</p>
+
+<button class="btn" onclick="go(11)">اختبار معلوماتك →</button>
+</section>
+
+<!-- 11 -->
+<section class="stage" id="s11">
+<h2>11 — اختبار المعرفة</h2>
+
+<p>أجب عن الأسئلة التالية، ثم اضغط على تصحيح الاختبار.</p>
+
+<div class="quiz">
+<b>1. ماذا تعني Authentication؟</b>
+<label><input type="radio" name="q1" value="a"> تحديد هوية المستخدم</label>
+<label><input type="radio" name="q1" value="b"> إعطاء جميع الصلاحيات</label>
+</div>
+
+<div class="quiz">
+<b>2. ماذا تعني Authorization؟</b>
+<label><input type="radio" name="q2" value="a"> تحديد ما يسمح للمستخدم بفعله</label>
+<label><input type="radio" name="q2" value="b"> تغيير كلمة المرور فقط</label>
+</div>
+
+<div class="quiz">
+<b>3. ما هي Broken Access Control؟</b>
+<label><input type="radio" name="q3" value="a"> مشكلة في التحكم في الصلاحيات</label>
+<label><input type="radio" name="q3" value="b"> نوع من ضغط الملفات</label>
+</div>
+
+<div class="quiz">
+<b>4. أين يجب التحقق من الصلاحيات؟</b>
+<label><input type="radio" name="q4" value="a"> في النظام/الخادم عند تنفيذ الطلب</label>
+<label><input type="radio" name="q4" value="b"> في شكل الصفحة فقط</label>
+</div>
+
+<div class="quiz">
+<b>5. هل تسجيل الدخول يعني أن المستخدم يستطيع الوصول لكل شيء؟</b>
+<label><input type="radio" name="q5" value="a"> نعم</label>
+<label><input type="radio" name="q5" value="b"> لا</label>
+</div>
+
+<button class="btn" onclick="checkQuiz()">تصحيح الاختبار</button>
+
+<div id="quizResult"></div>
+
+<button class="btn" id="quizNext" style="display:none" onclick="go(12)">
+عرض النتيجة النهائية →
+</button>
+</section>
+
+<!-- 12 -->
+<section class="stage" id="s12">
+<h2>12 — اكتملت التجربة 🎓</h2>
+
+<div class="result">
+<div class="score" id="finalScore">100%</div>
+
+<h3>مختبر Broken Access Control</h3>
+
+<p>
+أكملت تجربة تفاعلية حول:
+</p>
+
+<p>
+Authentication • Authorization • Access Control
+</p>
+
+<p>
+وتعلمت لماذا لا يكفي تسجيل الدخول وحده،
+ولماذا يجب على النظام التحقق من الصلاحيات.
+</p>
+
+<button class="btn" onclick="restartLab()">
+↻ إعادة تشغيل المختبر
+</button>
+</div>
+</section>
+
+</div>
+
+<footer>
+CyberGuard — إعداد من طرف يونس المسلك
+</footer>
+
+<script>
+var current = 1;
+
+function go(n){
+  var stages = document.querySelectorAll(".stage");
+
+  for(var i=0;i<stages.length;i++){
+    stages[i].classList.remove("active");
+  }
+
+  var target = document.getElementById("s"+n);
+
+  if(target){
+    target.classList.add("active");
+    current = n;
+    updateProgress();
+    window.scrollTo(0,0);
+  }
+}
+
+function updateProgress(){
+  var percent = Math.round((current / 12) * 100);
+
+  document.getElementById("bar").style.width = percent + "%";
+  document.getElementById("percent").innerText = percent + "%";
+  document.getElementById("step").innerText =
+    "المرحلة " + current + " من 12";
+}
+
+function showProfile(){
+  var box = document.getElementById("profileAlert");
+
+  if(box){
+    box.style.display = "block";
+    box.innerHTML =
+      "✓ تم فتح معلومات الحساب التجريبي بنجاح.";
+  }
+}
+
+function discover(){
+  var box = document.getElementById("danger");
+
+  if(box){
+    box.style.display = "block";
+    box.innerHTML =
+      "⚠️ اكتشاف مهم: هذه المنطقة مخصصة للمسؤولين فقط. " +
+      "في نظام حقيقي يجب أن يتحقق الخادم من صلاحيات المستخدم " +
+      "قبل السماح بالوصول.";
+  }
+}
+
+function testProtection(){
+  var box = document.getElementById("success");
+  var next = document.getElementById("next9");
+
+  if(box){
+    box.style.display = "block";
+    box.innerHTML =
+      "✓ ACCESS DENIED<br>" +
+      "تم رفض الوصول لأن المستخدم لا يملك صلاحيات ADMIN.";
+  }
+
+  if(next){
+    next.style.display = "inline-block";
+  }
+}
+
+function checkQuiz(){
+
+  var answers = {
+    q1:"a",
+    q2:"a",
+    q3:"a",
+    q4:"a",
+    q5:"b"
+  };
+
+  var score = 0;
+
+  for(var q in answers){
+
+    var selected = document.querySelector(
+      'input[name="' + q + '"]:checked'
+    );
+
+    if(selected && selected.value === answers[q]){
+      score++;
+    }
+  }
+
+  var percent = Math.round((score / 5) * 100);
+
+  var result = document.getElementById("quizResult");
+
+  result.innerHTML =
+    '<div class="result">' +
+    '<div class="score">' + percent + '%</div>' +
+    '<p>أجبت بشكل صحيح على ' +
+    score + ' من 5 أسئلة.</p>' +
+    '</div>';
+
+  document.getElementById("finalScore").innerText =
+    percent + "%";
+
+  document.getElementById("quizNext").style.display =
+    "inline-block";
+}
+
+function restartLab(){
+
+  var stages = document.querySelectorAll(".stage");
+
+  for(var i=0;i<stages.length;i++){
+    stages[i].classList.remove("active");
+  }
+
+  document.getElementById("s1").classList.add("active");
+
+  current = 1;
+
+  updateProgress();
+
+  var danger = document.getElementById("danger");
+  var success = document.getElementById("success");
+  var profile = document.getElementById("profileAlert");
+
+  if(danger){
+    danger.style.display = "none";
+    danger.innerHTML = "";
+  }
+
+  if(success){
+    success.style.display = "none";
+    success.innerHTML = "";
+  }
+
+  if(profile){
+    profile.style.display = "none";
+  }
+
+  var next = document.getElementById("next9");
+
+  if(next){
+    next.style.display = "none";
+  }
+
+  var quizNext = document.getElementById("quizNext");
+
+  if(quizNext){
+    quizNext.style.display = "none";
+  }
+
+  var quizResult = document.getElementById("quizResult");
+
+  if(quizResult){
+    quizResult.innerHTML = "";
+  }
+
+  var radios = document.querySelectorAll('input[type="radio"]');
+
+  for(var r=0;r<radios.length;r++){
+    radios[r].checked = false;
+  }
+
+  window.scrollTo(0,0);
+}
+
+function arabic(){
+  alert("النسخة العربية مفعلة حالياً.");
+}
+
+updateProgress();
+</script>
+
+</body>
+  </html>
